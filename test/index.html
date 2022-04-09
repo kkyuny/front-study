@@ -40,6 +40,23 @@
     -<태그/>:안전하고 엄격하다, XHTML/HTML5 지원되며 /가 없으면 동작하지 않는다.
      -> 빈 태그는 /를 혼용해서 사용하지만 되도록 <태그/>를 하는 것이 좋다.
      -> 대부분의 빈 태그는 속성이 필요하다.
-
+-->
+<!-- 
+    전역속성
+    <태그 title="설명"> : 요소의 정보나 설명을 지정
+    <태그 style="스타일">: 요소에 적용할 스타일(css)을 지정
+    <태그 class="이름">: 요소를 지정하는 중복 가능한 이름
+    <태그 id="이름">: 요소를 지칭하는 고유한 이름
+    <태그 data-이름="데이터">: 요소에 데이터를 지정
+    ex) <div data-fruit-name="apple">사과</div>
+    - JS
+    const els = document.querySselectorAll('div')
+    els.forEach(el => {
+        console.log(el.dataset.fruitName)
+    })
+    html의 fruit-name을 JS에서 fruitName으로 받는다
 
 -->
+<!-- <script defer src="./main.js"
+    : html 전체의 문장을 확인 후 JS를 실행하는 문장이다.
+--> 
