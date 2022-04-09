@@ -2,3 +2,46 @@ div {
   color: red;
   font-size: 100px;
 }
+
+/* 
+  선택자 { 속성 : 값;} : 선택자의 속성은 값이다.
+  div { color: red; margin: 20px;}
+  ->div의 color는 red, margin은 20px이다.
+  ->들여쓰기하여 작성한다.
+  
+  CSS 선언방식
+  1. 내장방식
+    <style></style>의 내용으로 스타일을 작성하는 방식
+    -> css를 html head에 내장하여 작성하는 방식
+    -> 별도의 css 파일을 만들지 않고 적용할 수 있다.
+    -> 하지만 코드가 복잡해지는 단점이 있다.
+  
+  2. 인라인 방식
+    요소의 style 속성에 직접 스타일을 작성하는 방식
+    ex)<div style="color: red;></div>
+    -> 편리하지만 인라인 방식은 지나치게 높은 우선순위를 갖고 있어
+    추 후 링크 방식 등으로 코드를 작성할 경우 값이 적용되지 않는 등의
+    유지보수가 어렵다는 단점이 있다.
+  
+  3.링크 방식
+    <link />로 외부 css 문서를 가져와서 연결하는 방식
+    ex) <link rel="stylesheet" href="./css/main.css">
+    -> 병렬로 연결된 방식이라고 하는데 의미는 잘 모르겠다.
+    
+  4. @import 방식
+    CSS의 @import 규칙으로 CSS 문서 안에서
+    또 다른 CSS 문서를 가져와 연결하는 방식
+    ex) main.css 
+    @import url("./box.css");
+    div {
+      color: red;
+    }
+    box.css
+    .box {
+      background-color: red;
+    }
+    -> main.css에서 box.css을 import하여 연결하여 사용하는 방식
+    -> 직렬로 연결하는 방식이라고 부른다.
+    -> main.css가 실행되지 않으면 box.css을 사용할 수 없다는 의미이다.
+    -> box.css 사용을 통제하려는 목적으로 사용할 수 있다.
+*/
