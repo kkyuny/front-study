@@ -96,7 +96,7 @@ class="className" 을 갖는 모든 class가 선택된다.
   }
   -> orange라는 클래스를 기준으로 오는 li라는 모든 형제 요소를 선택한다.
 
-05. 선택자_가상 클래스(1)
+05,6. 선택자_가상 클래스(1)
 .box: hover {
   width: 300px;
 }
@@ -109,5 +109,62 @@ class="className" 을 갖는 모든 class가 선택된다.
   * 태그 속성에 tabindex="-1"을 하게되면 해당 태그가 포커스가 되는 속성으로 변환된다.
  4) first-chile : 선택자가 형제 요소 중 첫째라면 선택한다.
  5) last-chile : 선택자가 형제 요소 중 막내라면 선택한다.
+ 6) ntn-child(n) : 선택자가 형제 요소 중 n째라면 선택한다.
+ 7) not(X) : 선택자 X가 아닌 요소 선택
+
+ 07. 선택자_가상 요소
+  1) .box::before{
+      content: "앞!";
+     }      
+     -> 선택자 요소의 내부 앞에 내용을 삽입하는 것으로
+     가상의 인라인 요소을 만들어서 요소의 앞에 삽입이 된다.
+     -> 요소를 삽입하는 선택자로서 반드시 content의 속성을 사용해야한다.
+     <div class="box">
+       before가 삽입 된다.
+       Condent!
+     -> 앞! Content!가 출력된다.
+      
+  2) .box::after{
+     content: "뒤!";
+     }      
+     -> 선택자 요소의 내부 앞에 내용을 삽입하는 것으로
+     가상의 인라인 요소을 만들어서 요소의 앞에 삽입이 된다.
+     -> 요소를 삽입하는 선택자로서 반드시 content의 속성을 사용해야한다.
+     <div class="box">       
+       Condent!
+       after가 삽입 된다.
+     -> Content! 뒤! 가 출력된다.
+  *tip: css의 선택자의 블럭 속성을 바꾸는 방법 display = ;
+
+ 08. 선택자_속성: 
+    1) [ABC] {} : ABC 속성을 포함한 요소 선택
+    - css
+    [disabled] {
+      color : red;
+    }
+    - html
+    <input type="text" value="ABCD" disabled/>
+    -> disabled 속성을 갖는 요소를 선택한다
+    2)[ABC="XYZ"]: ABC 속성을 포함하고 값이 XYZ인 요소 선택
+      [type="password"]{
+        color:red;
+      }
+      <input type="password" value="1234">
+      -> 속성이 일치하는 html 요소를 선택한다.
+  
+  09. 스타일 상속: 부모의 일부 스타일이 자식 요소에게도 적용된다.
+   - 상속되는 CSS 속성들: 모두 글자/문자와 관련된 속성들이다.
+    : font-style, font-weight, font-size, line-height, color 등
+   - 강제 상속: 상속이 되지 않는 스타일을 상속시킬 수가 있다.
+   - 사용방법: 부모의 속성을 그대로 따라야하는 값을 inherit 이용하여 상속 받는다
+     .parent{
+       height = 200px;
+     }
+     .child{
+       height = inherit;
+     }
+    -> 이 때, 반드시 hmtl의 구조적으로 child가 parent의 하위 위치에 있어야한다.
+
+
 
 */
