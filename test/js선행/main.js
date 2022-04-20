@@ -59,6 +59,51 @@ console.log('HEROPY!');
       let fruits = ['Apple', 'Banana', 'Cherry'];
       
       console.log(fruits[0]); // 'Apple'
+  03. 변수, 예약어
+    1) 변수 var, let, const
+      - let : 재사용이 가능한 변수
+        let a = 2;
+        let b = 5; 
+        -> 변수를 선언한다는 표현이다.
+        let a = 12;
+        a = 999;
+        -> 선언한 변수를 재사용이 가능하다.
+      - const: 선언한 변수의 재사용이 불가능하다.
+      - var: 사용을 지양한다.
+    2) 예약어 Reserved Word
+      - let this = "hello"; 등이 있다.
+       -> 예약어는 변수로서 사용이 불가능하다.
+  04. 함수 function
+    1) 함수 선언
+      function helloFunc(){
+        //실행 코드
+        console.log(1234);
+      }
+      function sum(a, b){ // a와 b는 매개변수(Parameters)
+        //실행 코드
+        return a+b;
+      }
+    2) 함수 호출
+      helloFunc(); // 1234
+      let a = sum(1,2); //1과 2는 인수(arguments)
+    3) 함수의 종류
+      (1) 이름이 있는 함수(함수의 선언)
+        function hello(){
+
+        }
+      (2) 이름이 없는 함수(함수의 *표현*)
+        let world = function(){
+
+        }
+        -> 주로 익명 함수는 변수에 담아져 데이터로서 활용된다.
+    4) 객체 데이터 내부에 함수 선언이 가능하다 -> 내부에 선언된 함수를 메소드라고 부른다.
+      const heropy = {
+        name: 'HEROPY',
+        getName : function (){
+          return this.name;
+        } // 메소드
+      };
+      const hisName = heropy.getName();
 
   */
 
