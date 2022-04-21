@@ -1,5 +1,3 @@
-console.log('HEROPY!');
-
 /* 
  JavaScript 선행 학습
  01. 개요
@@ -104,6 +102,56 @@ console.log('HEROPY!');
         } // 메소드
       };
       const hisName = heropy.getName();
+  05. 조건문 if, else
+    let isShow = true;
+    let checked = false;
+
+    if(isShow){ // 조건이 참이면 실행
+      console.log('show'!); // show!
+    }
+
+    if(isShow){
+      console.log('show'!); // show!
+    } else { // if의 조건이 거짓이면 실행
+      console.log('Hide?'); 
+    }
+
+  06. DOM API(1) : js에서 hmtl을 제어하는 일종의 명령문이다.
+    - DOM: document object(div, spam, ...) model
+    - API: application programming interface
+
+    -HTML 요소(element) 1개 검색/찾기
+    const boxEl = document.querySelector('box');
+
+    -HTML 요소에 적용할 수 있는 메소드
+    boxEl.addEventListener();
+
+    -인수(Argumnets)를 추가 가능!
+    boxEl.addEventListener(1, 2);
+
+     1) 이벤트(event, 상황)
+      boxEl.addEventListener('click', 2);
+    
+     2) 핸들러(handeler, 실행할 함수)
+      boxEl.addEventListener('click', function () {
+          console.log('Click~!');
+      });
+
+    - 요소의 클래스 정보 객체 활용
+     boxEl.classList.add('active');
+     let isContains = boxEl.classList.contains('active');
+     console.log(isContains); // true
+
+     boxEl.classList.remove('active');
+     let isContains = boxEl.classList.contains('active');
+     console.log(isContains); // false
 
   */
 
+let boxEl = document.querySelector('.box');
+
+console.log(boxEl);
+
+boxEl.addEventListener('click', function() {
+  console.log('Click!!!');
+});
