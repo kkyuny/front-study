@@ -145,7 +145,32 @@
      boxEl.classList.remove('active');
      let isContains = boxEl.classList.contains('active');
      console.log(isContains); // false
+  
+07. DOM API(2)
+  - HTML 요소(element) 모두 검색/찾기
+  const boxEls = document.querySelectorAll('.box');
+  console.log(boxEls);
 
+  - 찾은 요소를 반복해서 함수 실행
+  boxEls.forEach(function () {});
+   - 첫 번째 매개변수: 반복 중인 요소
+   - 두 번째 매개변수: 반복 중인 번호
+    boxEls.forEach(function (boxEl, index) {});
+
+  - textContent: Getter 값을 얻는 용도
+   console.log(boxEl,textContent); // Box!!
+  
+  - textContent: Setter, 값을 지정하는 용도
+   boxEl.textContent = 'HEROPY?!';
+   console.log(boxEl.textContent); // HEROPY?!
+
+08. 메소드 체이닝: 메소드를 체인처럼 사용하는 기능
+  const a = 'Hello~';
+  // split: 문자를 인수 기준으로 쪼개서 배열로 반환
+  // reverse: 배열을 뒤집기
+  // join: 배열을 인수 기준으로 문자로 병합해 반환.
+  const b = a.split('').reverse().join(''); // 메소드가 체인 형식으로 연결되어있다 -> 메소드 체이닝
+  
   */
 
 let boxEl = document.querySelector('.box');
@@ -154,4 +179,36 @@ console.log(boxEl);
 
 boxEl.addEventListener('click', function() {
   console.log('Click!!!');
+  boxEl.classList.add('active');
+  console.log(
+    boxEl.classList.contains('active')
+  );
+  boxEl.classList.remove('active');
+  console.log(
+    boxEl.classList.contains('active')
+  );
 });
+
+const boxEls = document.querySelectorAll('.box');
+boxEls.forEach(function (boxEl, index) {
+  boxEl.classList.add(`order-${index+1}`);
+  // 보간법을 사용하려면 ``(백틱)을 사용해야한다.
+  console.log(index,boxEl);
+});
+
+const boxEl2 = document.querySelector('.box');
+console.log(boxEl2.textContent);
+
+boxEl2.textContent = 'HEROPY!!';
+
+console.log(boxEl2.textContent);
+
+//메소드 체이닝
+
+const a = 'Hello~';
+const b = a.split('').reverse();
+const c = a.split('').reverse().join('');
+
+console.log(a);
+console.log(b);
+console.log(c);
